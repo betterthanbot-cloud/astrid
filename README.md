@@ -12,7 +12,7 @@
 
 
 ## How to clone and commit repo
-'''
+```
 $ git clone https://github.com/betterthanbot-cloud/astrid.git 
 $ git pull
 $ git checkout -b feature/astrid-XX             # Change XX with Astric Dashboard Title extention. 
@@ -21,11 +21,11 @@ $ git add .
 $ git commit -m "Meaningful message"            # Commit message related to dashboard task you are working on.
 $ git push origin feature/astrid-XX
 $ git push --tag
-'''
+```
 
 
 ## How to setup git config
-'''
+```
 $ git config --global --edit                    # click 'i' to insert
 name = <github-username>                        # enter github username
 email = <email>                                 # enter email related to github account
@@ -34,7 +34,7 @@ diff = auto
 status = auto
 branch = auto
 pager = true
-'''
+```
 
 [AWS]: https://docs.aws.amazon.com/?nc2=h_ql_doc_do
 [Astrid Dashboard]: https://github.com/orgs/betterthanbot-cloud/projects/1
