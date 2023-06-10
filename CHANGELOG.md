@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 - Edit README.md
 
-
 ## [0.0.2] - 2023-06-10
 ### Added
 - Added Base-services templates and placeholders
