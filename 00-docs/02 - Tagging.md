@@ -3,6 +3,7 @@
 | Tag | Description | Examples |
 | --- | --- | --- |
 | Owner | Github Username | “BetterThanBot” |
+| Email | Github Email | "abc@gmail.com" |
 | Environment | Environment | “dev”, “tst”, “prod” |
 | Created-By | How was the resource created | “terraform”, "manual" |
 | Source | github/codecommit URL where product has been created from | “< github url >.git" |
