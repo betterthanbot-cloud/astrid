@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Released]
 
+## [0.0.5] - 2023-06-25
+### Changed
+- Edit 01 - Github Setup.md
+- Combined guide for setting up SSH and GPG for GitHub
+
 ## [0.0.4] - 2023-06-17
 ### Added
 - 00 - docs
