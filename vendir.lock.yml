@@ -2,10 +2,50 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
+      commitTitle: 'chore(release): version 3.14.1 [skip ci]...'
+      sha: c074ef4870aa981aafa5824f377f493377b7ee7f
+      tags:
+      - v3.14.1
+    path: .
+  path: ./terraform/01-modules/01-s3
+- contents:
+  - git:
+      commitTitle: 'chore(release): version 5.28.0 [skip ci]...'
+      sha: 2eb955d1e9dcbb471ee1635e25e9c0db55df105a
+      tags:
+      - v5.28.0
+    path: .
+  path: ./terraform/01-modules/02-iam
+- contents:
+  - git:
+      commitTitle: 'chore(release): version 5.1.1 [skip ci]...'
+      sha: fbd4ff646b4caaa6fcc1fb71bc88d377cc8b3b48
+      tags:
+      - v5.1.1
+    path: .
+  path: ./terraform/01-modules/03-vpc
+- contents:
+  - git:
       commitTitle: 'chore(release): version 19.16.0 [skip ci]...'
       sha: 666603b6e531140d5d8fbd777cd90a7fbb8247dd
       tags:
       - v19.16.0
     path: .
   path: ./terraform/01-modules/04-eks
+- contents:
+  - git:
+      commitTitle: 'chore(release): version 2.10.2 [skip ci]...'
+      sha: d67ac59473bf3eb2628c30b2f26cb743dd3580ed
+      tags:
+      - v2.10.2
+    path: .
+  path: ./terraform/01-modules/05-r53
+- contents:
+  - git:
+      commitTitle: 'Merge pull request #119 from trussworks/deprecate-terraform-versions...'
+      sha: 75c0b4fc49e8366ce9c1d9242bf7496ed2283619
+      tags:
+      - v4.0.0
+    path: .
+  path: ./terraform/01-modules/06-waf
 kind: LockConfig
