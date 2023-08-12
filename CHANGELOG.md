@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Released]
 
+## [0.0.6] - 2023-08-12
+### Added
+- added vendir
+- added eks modules
+- added terraform backend
+
 ## [0.0.5] - 2023-06-25
 ### Changed
 - Edit 01 - Github Setup.md

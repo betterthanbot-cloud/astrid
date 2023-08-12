@@ -36,6 +36,15 @@ branch = auto
 pager = true
 ```
 
+## How to setup terrafrom 
+```
+$ terrafrom init
+```
+
+## How to use vendir
+
+## How to use SOPS
+
 [AWS]: https://docs.aws.amazon.com/?nc2=h_ql_doc_do
 [Astrid Dashboard]: https://github.com/orgs/betterthanbot-cloud/projects/1
 [Terraform]: https://developer.hashicorp.com/terraform/intro
