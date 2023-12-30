@@ -20,7 +20,7 @@ locals {
   tags = merge(
     var.base_tags,
     {
-      Subproduct = "01-vpv"
+      Subproduct = "01-vpc"
       Created-At = local.datetime_sgt
   })
 
