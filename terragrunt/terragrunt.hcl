@@ -16,6 +16,8 @@ remote_state {
 }
 
 locals {
+  dirs   = split("/", path_relative_to_include())
+  env    = local.dirs[0]
   common = yamldecode(file("common.yaml"))
 }
 
@@ -23,5 +25,7 @@ inputs = merge(
   {
     base_tags = merge(
       local.common.base_tags,
-    )
+      {
+        Environment = local.env
+    })
 })

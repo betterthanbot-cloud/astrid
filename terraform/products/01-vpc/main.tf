@@ -9,17 +9,21 @@ terraform {
 }
 
 provider "aws" {
-
+  region = "ap-southeast-1"
 }
 
 ## Tags
 locals {
+  datetime_utc = timestamp()
+  datetime_sgt = timeadd(local.datetime_utc, "8h")
+
   tags = merge(
     var.base_tags,
     {
-      Subproduct = "01-vpc"
-    }
-  )
+      Subproduct = "01-vpv"
+      Created-At = local.datetime_sgt
+  })
+
 }
 
 variable "base_tags" {
@@ -32,4 +36,8 @@ variable "base_tags" {
     Source      = string
     Subproduct  = string
   })
+}
+
+output "datetime" {
+  value = local.datetime_sgt
 }
