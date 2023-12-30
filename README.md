@@ -13,9 +13,9 @@
 
 ## How to clone and commit repo
 ```
-$ git clone https://github.com/betterthanbot-cloud/astrid.git 
+$ git clone https://github.com/betterthanbot-cloud/astrid.git
 $ git pull
-$ git checkout -b feature/astrid-XX             # Change XX with Astric Dashboard Title extention. 
+$ git checkout -b feature/astrid-XX             # Change XX with Astric Dashboard Title extention.
 $ git tag 0.0.X                                 # Tag follows CHANGELOG.MD version. eg. 1.1.3
 $ git add .
 $ git commit -m "Meaningful message"            # Commit message related to dashboard task you are working on.
@@ -36,7 +36,7 @@ branch = auto
 pager = true
 ```
 
-## How to setup terrafrom 
+## How to setup terrafrom
 ```
 $ terrafrom init
 ```

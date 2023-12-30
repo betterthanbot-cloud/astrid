@@ -1,11 +1,39 @@
 repos:
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.81.0
-    hooks:
-      - id: terraform_fmt
-      - id: terraform_validate
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
-    hooks:
-      - id: check-merge-conflict
-      - id: end-of-file-fixer
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.83.5
+  hooks:
+    - id: terraform_fmt
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: terragrunt_fmt
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: check-added-large-files
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: check-case-conflict
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: check-docstring-first
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: check-json
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: check-merge-conflict
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: check-yaml
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+      args: [--allow-multiple-documents]
+    - id: end-of-file-fixer
+      exclude: >
+        (?x)^(terraform/modules/.+)$
+    - id: trailing-whitespace
+      exclude: >
+        (?x)^(terraform/modules/.+)$

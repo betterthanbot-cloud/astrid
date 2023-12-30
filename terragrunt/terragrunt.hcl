@@ -8,7 +8,7 @@ remote_state {
   config = {
     bucket = "aws-astrid-infra"
 
-    key = "${path_relative_to_include()}/terraform.tfstate"
+    key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = "ap-southeast-1"
     encrypt        = true
     dynamodb_table = "aws-astrid-infra-terraform-statefile-lock"
@@ -16,7 +16,7 @@ remote_state {
 }
 
 locals {
-    common = yamldecode(file("common.yaml"))
+  common = yamldecode(file("common.yaml"))
 }
 
 inputs = merge(
