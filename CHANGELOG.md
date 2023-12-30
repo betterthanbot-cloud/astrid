@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Released]
 
+## [0.0.8] - 2023-12-30
+### Added
+- added terragrunt backend configs
+- added pre-commit
+### Removed
+- removed terraform modules
+
 ## [0.0.7] - 2023-08-12
 ### Added
 - added s3, iam, vpc, r53, waf modeules
