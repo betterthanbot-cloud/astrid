@@ -1,10 +1,3 @@
-# Local .terraform directories
-**/.terraform/*
-
-# .tfstate files
-*.tfstate
-*.tfstate.*
-
 # Crash log files
 crash.log
 crash.*.log
@@ -87,3 +80,19 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk%   
+
+.*.sw?
+.idea
+terragrunt.iml
+vendor
+.terraform
+.vscode
+*.tfstate
+*.tfstate.backup
+*.out
+.terragrunt-cache
+.bundle
+.ruby-version
+.terraform.lock.hcl
+terragrunt
+.DS_Store

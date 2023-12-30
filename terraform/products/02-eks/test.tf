@@ -1,7 +1,7 @@
 resource "aws_instance" "app_server" {
   ami           = "ami-0e4b5d31e60aa0acd"
   instance_type = "t2.micro"
-  tags = local.tags
+  tags          = local.tags
 }
 
 output "instance_id" {

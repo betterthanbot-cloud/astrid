@@ -1,7 +1,0 @@
-base_tags:
-  Environment: "dev"
-  Owner: "collective"
-  Product: "astrid-infra"
-  Subproduct: ""
-  Created-By: "terraform"
-  Source: "https://github.com/betterthanbot-cloud/astrid-infra.git"
