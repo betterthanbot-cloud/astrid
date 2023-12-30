@@ -1,0 +1,63 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+
+  - path: ./terraform/01-modules/01-s3
+    contents:
+      - path: .
+        git:
+          url: https://github.com/terraform-aws-modules/terraform-aws-s3-bucket.git
+          ref: v3.14.1
+        includePaths:
+        - /*
+        - /**/modules/**
+
+  - path: ./terraform/01-modules/02-iam
+    contents:
+      - path: .
+        git:
+          url: https://github.com/terraform-aws-modules/terraform-aws-iam.git
+          ref: v5.28.0
+        includePaths:
+        - /*
+        - /**/modules/**
+
+  - path: ./terraform/01-modules/03-vpc
+    contents:
+      - path: .
+        git:
+          url: https://github.com/terraform-aws-modules/terraform-aws-vpc.git
+          ref: v5.1.1
+        includePaths:
+        - /*
+        - /**/modules/**
+
+  - path: ./terraform/01-modules/04-eks
+    contents:
+      - path: .
+        git:
+          url: https://github.com/terraform-aws-modules/terraform-aws-eks.git
+          ref: v19.16.0
+        includePaths:
+        - /*
+        - /**/modules/**
+        
+  - path: ./terraform/01-modules/05-r53
+    contents:
+      - path: .
+        git:
+          url: https://github.com/terraform-aws-modules/terraform-aws-route53.git
+          ref: v2.10.2
+        includePaths:
+        - /*
+        - /**/modules/**
+
+  - path: ./terraform/01-modules/06-waf
+    contents:
+      - path: .
+        git:
+          url: https://github.com/trussworks/terraform-aws-wafv2.git
+          ref: v4.0.0
+        includePaths:
+        - /*
+        - /**/modules/**
