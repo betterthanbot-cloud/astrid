@@ -1,5 +1,4 @@
 base_tags:
-  Environment: "dev"
   Owner: "collective"
   Product: "astrid-infra"
   Subproduct: ""
