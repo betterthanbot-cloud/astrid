@@ -14,8 +14,8 @@ inputs = {
   cluster_name           = "library"
   vpc_subnet_ids         = dependency.vpc.outputs.subnets
   kubernetes_version     = "1.28"
-  desired_size           = 1
-  max_size               = 2
-  min_size               = 0
+  desired_size           = 2
+  max_size               = 3
+  min_size               = 2
   endpoint_public_access = true
 }

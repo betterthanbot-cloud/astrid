@@ -1,6 +1,6 @@
-#############################################################
-######################## EKS Cluster ########################
-#############################################################
+################################################################################
+# EKS Cluster
+################################################################################
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -30,19 +30,33 @@ resource "aws_iam_role" "this" {
 }
 
 
-#############################################################
-####################### EKS NodeGroup #######################
-#############################################################
+################################################################################
+# EKS NodeGroup
+################################################################################
 resource "aws_iam_role" "node_group_iam_role" {
   name = "eks_node_group_iam_role"
   assume_role_policy = jsonencode({
-    Statement = [{
-      Action = "sts:AssumeRole"
-      Effect = "Allow"
-      Principal = {
-        Service = "ec2.amazonaws.com"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "ec2.amazonaws.com"
+        }
+      },
+      {
+        Action    = "ecr:*",
+        Effect    = "Allow",
+        Principal = "*",
+        Resource  = "*"
+      },
+      {
+        Action    = "ecr:GetAuthorizationToken*",
+        Effect    = "Allow",
+        Principal = "*",
+        Resource  = "*"
       }
-    }]
+    ]
     Version = "2012-10-17"
   })
 }
