@@ -12,7 +12,6 @@ provider "aws" {
   region = "ap-southeast-1"
 }
 
-## Tags
 locals {
   datetime_utc = timestamp()
   datetime_sgt = timeadd(local.datetime_utc, "8h")
@@ -36,16 +35,6 @@ variable "base_tags" {
     Source      = string
     Subproduct  = string
   })
-}
-
-variable "vpc_subnet_ids" {
-  description = "vpc subnet ids"
-  type        = list(string)
-}
-
-variable "k8_version" {
-  description = "k8_version"
-  type        = string
 }
 
 output "datetime" {
