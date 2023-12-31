@@ -28,20 +28,3 @@ resource "aws_subnet" "eks_subnet_az3" {
 
   tags = local.tags
 }
-
-# output "eks_subnet_az1" {
-#   value = aws_subnet.eks_subnet_az1
-# }
-
-# output "eks_subnet_az2" {
-#   value = aws_subnet.eks_subnet_az2
-# }
-# output "eks_subnet_az3" {
-#   value = aws_subnet.eks_subnet_az3
-# }
-
-/*
-10.0.0.1
-10.0.0.64
-10.0.0.128
-*/
