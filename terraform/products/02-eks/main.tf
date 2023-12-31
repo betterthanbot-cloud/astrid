@@ -38,6 +38,16 @@ variable "base_tags" {
   })
 }
 
+variable "vpc_subnet_ids" {
+  description = "vpc subnet ids"
+  type        = list(string)
+}
+
+variable "k8_version" {
+  description = "k8_version"
+  type        = string
+}
+
 output "datetime" {
   value = local.datetime_sgt
 }
