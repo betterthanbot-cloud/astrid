@@ -43,22 +43,37 @@ resource "aws_iam_role" "node_group_iam_role" {
         Principal = {
           Service = "ec2.amazonaws.com"
         }
-      },
-      {
-        Action    = "ecr:*",
-        Effect    = "Allow",
-        Principal = "*",
-        Resource  = "*"
-      },
-      {
-        Action    = "ecr:GetAuthorizationToken*",
-        Effect    = "Allow",
-        Principal = "*",
-        Resource  = "*"
       }
     ]
     Version = "2012-10-17"
   })
+}
+
+resource "aws_iam_policy" "assume_role_policy" {
+  name        = "AssumeRolePolicy"
+  description = "Assume Role Policy for EKS Node Group IAM Role"
+
+  policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "eks-auth:*",
+          "ecs:*",
+          "ecr:*",
+          "sts:*",
+          "eks:*"
+        ],
+        "Resource" : "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "assume_role_policy_attachment" {
+  policy_arn = aws_iam_policy.assume_role_policy.arn
+  role       = aws_iam_role.node_group_iam_role.name
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSWorkerNodePolicy" {
