@@ -2,10 +2,10 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'chore(release): version 19.16.0 [skip ci]...'
-      sha: 666603b6e531140d5d8fbd777cd90a7fbb8247dd
+      commitTitle: 'chore(release): version 19.21.0 [skip ci]...'
+      sha: 2cb1fac31b0fc2dd6a236b0c0678df75819c5a3b
       tags:
-      - v19.16.0
+      - v19.21.0
     path: .
   path: ./terraform/modules/02-eks
 kind: LockConfig

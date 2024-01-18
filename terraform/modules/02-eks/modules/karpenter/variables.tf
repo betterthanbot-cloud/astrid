@@ -123,6 +123,12 @@ variable "irsa_assume_role_condition_test" {
   default     = "StringEquals"
 }
 
+variable "enable_karpenter_instance_profile_creation" {
+  description = "Determines whether Karpenter will be allowed to create the IAM instance profile (v1beta1) or if Terraform will (v1alpha1)"
+  type        = bool
+  default     = false
+}
+
 ################################################################################
 # Node Termination Queue
 ################################################################################
@@ -223,8 +229,8 @@ variable "iam_role_attach_cni_policy" {
 
 variable "iam_role_additional_policies" {
   description = "Additional policies to be added to the IAM role"
-  type        = list(string)
-  default     = []
+  type        = map(string)
+  default     = {}
 }
 
 variable "iam_role_tags" {

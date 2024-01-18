@@ -285,7 +285,7 @@ resource "aws_launch_template" "this" {
     for_each = length(var.license_specifications) > 0 ? var.license_specifications : {}
 
     content {
-      license_configuration_arn = license_specifications.value.license_configuration_arn
+      license_configuration_arn = license_specification.value.license_configuration_arn
     }
   }
 
@@ -527,8 +527,9 @@ resource "aws_autoscaling_group" "this" {
                   }
                 }
 
-                accelerator_types = try(instance_requirements.value.accelerator_types, [])
-                bare_metal        = try(instance_requirements.value.bare_metal, null)
+                accelerator_types      = try(instance_requirements.value.accelerator_types, [])
+                allowed_instance_types = try(instance_requirements.value.allowed_instance_types, null)
+                bare_metal             = try(instance_requirements.value.bare_metal, null)
 
                 dynamic "baseline_ebs_bandwidth_mbps" {
                   for_each = try([instance_requirements.value.baseline_ebs_bandwidth_mbps], [])
