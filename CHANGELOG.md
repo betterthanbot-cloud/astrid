@@ -10,12 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 # [Unreleased]
-## [0.1.0] - 2024-01-01
-### Changed
-- Added VPC
-- Added EKS
 
 # [Released]
+## [0.1.0] - 2024-01-20
+### Added
+- Working EKS copy, refactor needed
+
 ## [0.0.9] - 2023-12-31
 ### Changed
 - edits to tags
