@@ -74,8 +74,8 @@ module "eks" {
       subnet_ids = module.vpc.private_subnets
 
       min_size     = 1
-      max_size     = 2
-      desired_size = 1
+      max_size     = 3
+      desired_size = 2
 
       ami_id                     = data.aws_ami.eks_default.image_id
       enable_bootstrap_user_data = true
