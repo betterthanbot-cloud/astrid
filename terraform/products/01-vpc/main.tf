@@ -16,7 +16,7 @@ data "aws_caller_identity" "current" {}
 data "aws_availability_zones" "available" {}
 
 locals {
-  name   = "ex-${replace(basename(path.cwd), "_", "-")}"
+  name   = "${var.name}-${replace(basename(path.cwd), "_", "-")}"
   region = "ap-southeast-1"
 
   vpc_cidr = "10.0.0.0/16"

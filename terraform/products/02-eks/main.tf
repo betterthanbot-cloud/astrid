@@ -25,7 +25,7 @@ provider "kubernetes" {
 }
 
 locals {
-  name            = "ex-${replace(basename(path.cwd), "_", "-")}"
+  name            = "${var.name}-${replace(basename(path.cwd), "_", "-")}"
   cluster_version = "1.27"
   region          = "ap-southeast-1"
 

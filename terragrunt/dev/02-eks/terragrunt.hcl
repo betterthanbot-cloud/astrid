@@ -12,6 +12,7 @@ dependency "vpc" {
 
 inputs = {
   //   cluster_name           = "library"
+  name            = "Astrid-Infra"
   vpc_id          = dependency.vpc.outputs.vpc_id
   private_subnets = dependency.vpc.outputs.private_subnets
   intra_subnets   = dependency.vpc.outputs.intra_subnets
