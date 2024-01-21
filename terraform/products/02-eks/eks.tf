@@ -47,9 +47,9 @@ module "eks" {
     }
   }
 
-  vpc_id                   = module.vpc.vpc_id
-  subnet_ids               = module.vpc.private_subnets
-  control_plane_subnet_ids = module.vpc.intra_subnets
+  vpc_id                   = var.vpc_id
+  subnet_ids               = var.private_subnets
+  control_plane_subnet_ids = var.intra_subnets
 
   manage_aws_auth_configmap = true
 
@@ -71,7 +71,7 @@ module "eks" {
     complete = {
       name            = "complete-eks-mng"
       use_name_prefix = true
-      subnet_ids      = module.vpc.private_subnets
+      subnet_ids      = var.private_subnets
 
       min_size     = 1
       max_size     = 3
@@ -155,38 +155,4 @@ module "eks" {
   }
 
   tags = local.tags
-}
-
-################################################################################
-# Supporting Resources
-################################################################################
-
-
-module "key_pair" {
-  source  = "terraform-aws-modules/key-pair/aws"
-  version = "~> 2.0"
-
-  key_name_prefix    = local.name
-  create_private_key = true
-
-  tags = local.tags
-}
-data "aws_ami" "eks_default" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["amazon-eks-node-${local.cluster_version}-v*"]
-  }
-}
-
-data "aws_ami" "eks_default_arm" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["amazon-eks-arm64-node-${local.cluster_version}-v*"]
-  }
 }

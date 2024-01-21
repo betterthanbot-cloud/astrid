@@ -95,25 +95,6 @@ output "node_security_group_id" {
 }
 
 ################################################################################
-# IRSA
-################################################################################
-
-output "oidc_provider" {
-  description = "The OpenID Connect identity provider (issuer URL without leading `https://`)"
-  value       = module.eks.oidc_provider
-}
-
-output "oidc_provider_arn" {
-  description = "The ARN of the OIDC Provider if `enable_irsa = true`"
-  value       = module.eks.oidc_provider_arn
-}
-
-output "cluster_tls_certificate_sha1_fingerprint" {
-  description = "The SHA1 fingerprint of the public key of the cluster's certificate"
-  value       = module.eks.cluster_tls_certificate_sha1_fingerprint
-}
-
-################################################################################
 # IAM Role
 ################################################################################
 
@@ -202,10 +183,37 @@ output "self_managed_node_groups_autoscaling_group_names" {
 }
 
 ################################################################################
+# IRSA
+################################################################################
+
+output "oidc_provider" {
+  description = "The OpenID Connect identity provider (issuer URL without leading `https://`)"
+  value       = module.eks.oidc_provider
+}
+
+output "oidc_provider_arn" {
+  description = "The ARN of the OIDC Provider if `enable_irsa = true`"
+  value       = module.eks.oidc_provider_arn
+}
+
+output "cluster_tls_certificate_sha1_fingerprint" {
+  description = "The SHA1 fingerprint of the public key of the cluster's certificate"
+  value       = module.eks.cluster_tls_certificate_sha1_fingerprint
+}
+
+output "vpc_cni_irsa_iam_role_arn" {
+  value = module.eks.cluster_tls_certificate_sha1_fingerprint
+}
+
+################################################################################
 # Additional
 ################################################################################
 
 output "aws_auth_configmap_yaml" {
   description = "Formatted yaml output for base aws-auth configmap containing roles used in cluster node groups/fargate profiles"
   value       = module.eks.aws_auth_configmap_yaml
+}
+
+output "datetime" {
+  value = local.datetime_sgt
 }
